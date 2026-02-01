@@ -55,7 +55,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_buffer", free_function = "wl_buffer_destroy")]
 	public class Buffer {
-		public int add_listener (Wl.BufferListener listener, void* data);
+		public int add_listener (ref Wl.BufferListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -88,7 +88,7 @@ namespace Wl {
 		public int read_events ();
 		public unowned Wl.Callback sync ();
 		public Wl.Registry get_registry ();
-		public int add_listener (Wl.DisplayListener listener, void* data);
+		public int add_listener (ref Wl.DisplayListener listener, void* data);
 	}
 
 	[Compact]
@@ -104,7 +104,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_callback", free_function = "wl_callback_destroy")]
 	public class Callback {
-		public int add_listener (Wl.CallbackListener listener, void* data);
+		public int add_listener (ref Wl.CallbackListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -113,7 +113,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_data_offer", free_function = "wl_data_offer_destroy")]
 	public class DataOffer {
-		public int add_listener (Wl.DataOfferListener listener, void* data);
+		public int add_listener (ref Wl.DataOfferListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -126,7 +126,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_data_source", free_function = "wl_data_source_destroy")]
 	public class DataSource {
-		public int add_listener (Wl.DataSourceListener listener, void* data);
+		public int add_listener (ref Wl.DataSourceListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -137,7 +137,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_data_device", free_function = "wl_data_device_destroy")]
 	public class DataDevice {
-		public int add_listener (Wl.DataDeviceListener listener, void* data);
+		public int add_listener (ref Wl.DataDeviceListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -176,7 +176,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_keyboard", free_function = "wl_keyboard_destroy")]
 	public class Keyboard : Wl.Proxy {
-		public int add_listener (Wl.KeyboardListener listener, void* data);
+		public int add_listener (ref Wl.KeyboardListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -196,7 +196,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_output", free_function = "wl_output_destroy")]
 	public class Output : Wl.Proxy {
-		public int add_listener (Wl.OutputListener listener, void* data);
+		public int add_listener (ref Wl.OutputListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -207,7 +207,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_pointer", free_function = "wl_pointer_destroy")]
 	public class Pointer : Wl.Proxy {
-		public int add_listener (Wl.PointerListener listener, void* data);
+		public int add_listener (ref Wl.PointerListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -242,7 +242,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_registry", free_function = "wl_registry_destroy")]
 	public class Registry : Wl.Proxy {
-		public int add_listener (Wl.RegistryListener listener, void* data);
+		public int add_listener (ref Wl.RegistryListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -253,7 +253,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_seat", free_function = "wl_seat_destroy")]
 	public class Seat : Wl.Proxy {
-		public int add_listener (Wl.SeatListener listener, void* data);
+		public int add_listener (ref Wl.SeatListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -276,7 +276,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_shell_surface", free_function = "wl_shell_surface_destroy")]
 	public class ShellSurface : Wl.Proxy {
-		public int add_listener (Wl.ShellSurfaceListener listener, void* data);
+		public int add_listener (ref Wl.ShellSurfaceListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -295,7 +295,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_shm", free_function = "wl_shm_destroy")]
 	public class Shm : Wl.Proxy {
-		public int add_listener (Wl.ShmListener listener, void* data);
+		public int add_listener (ref Wl.ShmListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -336,7 +336,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_surface", free_function = "wl_surface_destroy")]
 	public class Surface : Wl.Proxy {
-		public int add_listener (Wl.SurfaceListener listener, void* data);
+		public int add_listener (ref Wl.SurfaceListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
@@ -355,7 +355,7 @@ namespace Wl {
 	[Compact]
 	[CCode (cname = "struct wl_touch", free_function = "wl_touch_destroy")]
 	public class Touch : Wl.Proxy {
-		public int add_listener (Wl.TouchListener listener, void* data);
+		public int add_listener (ref Wl.TouchListener listener, void* data);
 		public void set_user_data (void* user_data);
 		public void* get_user_data ();
 		public uint32 get_version ();
